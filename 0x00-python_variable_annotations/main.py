@@ -1,7 +1,30 @@
 #!/usr/bin/env python3
+zoom_array =  __import__('102-type_checking').zoom_array
+
+print(zoom_array.__annotations__)
+
+"""
+safely_get_value = __import__('101-safely_get_value').safely_get_value
+annotations = safely_get_value.__annotations__
+
+print("Here's what the mappings should look like")
+for k, v in annotations.items():
+    print( ("{}: {}".format(k, v)))
+"""
+
+
+"""
+safe_first_element =  __import__('100-safe_first_element').safe_first_element
+
+print(safe_first_element.__annotations__)
+"""
+
+"""
 element_length =  __import__('9-element_length').element_length
 
 print(element_length.__annotations__)
+"""
+
 
 """
 make_multiplier = __import__('8-make_multiplier').make_multiplier
