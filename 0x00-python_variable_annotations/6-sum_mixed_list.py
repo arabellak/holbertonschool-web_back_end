@@ -2,6 +2,9 @@
 """Mixed list"""
 
 
-def sum_mixed_list(mxd_lst: [int, float]) -> float:
+from typing import List
+
+
+def sum_mixed_list(mxd_lst: List[int, float]) -> float:
     """Returns their sum as a float"""
     return sum(mxd_lst)
