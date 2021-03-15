@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-#Variables.
+"""Variables"""
+
 
 a: int = 1
 pi: float = 3.14

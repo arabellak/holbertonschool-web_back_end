@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-#String and int/float to tuple
+"""String and int/float to tuple"""
+
 
 from typing import Union, Tuple
 
-def to_kv(k:str, v: Union[int, float]) -> Tuple[str,float]:
+
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """Returns a tuple"""
-    return k, pow(v,2)
+    return k, pow(v, 2)

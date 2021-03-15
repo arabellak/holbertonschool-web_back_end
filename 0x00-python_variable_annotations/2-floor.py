@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-#Floor
+"""Floor"""
+
 
 def floor(n: float) -> int:
     """ Returns the floor of the float """

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-#Callable
+"""Callable"""
+
 
 from typing import Callable
+
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """Returns a function"""
