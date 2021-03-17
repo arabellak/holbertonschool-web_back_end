@@ -4,7 +4,7 @@ import asyncio
 import random
 
 
-async def async_generator():
+def async_generator():
     """Loops 10 times"""
     for i in range(10):
         await asyncio.sleep(1)
