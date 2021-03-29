@@ -3,6 +3,7 @@
 """
 from flask import request
 from typing import List, TypeVar
+import sys
 
 
 class Auth:
@@ -11,7 +12,20 @@ class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Require authorization
         """
-        return False
+        if path is None:
+            return True
+
+        if excluded_paths is None or len(excluded_paths) == 0:
+            return True
+
+        if path in excluded_paths:
+            return False
+
+        if 'path=/api/v1/status' in excluded_paths and 'path=/api/v1/status/' in excluded_paths:
+            return False
+        
+        if path not in excluded_paths:
+            return True
 
     def authorization_header(self, request=None) -> str:
         """Authorization header
