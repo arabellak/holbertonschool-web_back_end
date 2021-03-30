@@ -20,6 +20,6 @@ class Auth():
         return None
 
     def current_user(self, request=None) -> TypeVar('User'):
-        """
         """User
+        """
         return None
