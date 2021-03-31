@@ -4,9 +4,7 @@ import re
 
 
 def filter_datum(fields: str, redaction: str, message: str, separator: str):
-    """Return
-        - Log message obfuscated
-    """
+    """Return- Log message obfuscated"""
     for i in fields:
         message = re.sub(f'{i}=.+?{separator}',
                       f'{i}={redaction}{separator}',
