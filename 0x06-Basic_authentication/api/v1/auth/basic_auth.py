@@ -80,4 +80,4 @@ class BasicAuth(Auth):
         for pe_pe in pe:
             if pe_pe.is_valid_password(user_pwd):
                 return pe_pe
-            return None
+        return None
