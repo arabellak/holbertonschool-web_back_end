@@ -63,7 +63,7 @@ class BasicAuth(Auth):
                                       self,
                                       user_email: str,
                                       user_pwd: str
-                                      ) -> TypeVar('User'):
+                                    ) -> TypeVar('User'):
         """Return
             - User instance based on his email and password.
         """
