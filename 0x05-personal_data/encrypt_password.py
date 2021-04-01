@@ -5,7 +5,7 @@ Encrypting passwords
 import bcrypt
 
 
-def hash_password(password) -> bytes:
+def hash_password(password: str) -> bytes:
     """Return
         -  A salted, hashed password, which is a byte string.
     """
