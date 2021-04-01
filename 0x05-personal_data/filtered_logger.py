@@ -59,7 +59,8 @@ def get_logger() -> logging.Logger:
 
 
 def get_db():
-    """Database connector"""
+    """Database connector
+    """
     config = {
         'user': os.getenv('PERSONAL_DATA_DB_USERNAME'),
         'pswrd': os.getenv('PERSONAL_DATA_DB_PASSWORD'),
@@ -68,3 +69,4 @@ def get_db():
     }
 
     connect = mysql.connector.connect(**config)
+    return connect
