@@ -5,7 +5,7 @@ Manage the API authentication.
 from api.v1.auth.auth import Auth
 from flask import request
 import uuid
-
+from models.user import User
 
 class SessionAuth(Auth):
     """Validates
@@ -33,3 +33,14 @@ class SessionAuth(Auth):
             return None
 
         return self.user_id_by_session_id.get(session_id)
+
+    def current_user(self, request=None):
+        """Return
+            - User instance on a cookie value
+        """
+        user_cookie = self.session_cookie(request)
+        if user_cookie is None:
+            return None
+
+        d = self.user_id_for_session_id(user_cookie)
+        return User.get(d)
