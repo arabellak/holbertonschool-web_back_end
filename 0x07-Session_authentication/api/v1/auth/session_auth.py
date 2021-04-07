@@ -7,6 +7,7 @@ from flask import request
 import uuid
 from models.user import User
 
+
 class SessionAuth(Auth):
     """Validates
     """
