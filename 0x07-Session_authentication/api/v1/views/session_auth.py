@@ -10,6 +10,8 @@ from api.v1.views import app_views
 
 @app_views.route('/auth_session/login', methods=['POST'], strict_slashes=False)
 def login():
+    """Login
+    """
     email = request.form.get('email')
     if not email:
         return jsonify({"error": "email missing"}), 400
