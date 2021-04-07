@@ -35,4 +35,5 @@ def login():
             res = jsonify(user.to_json())
             se_name = getenv('SESSION_NAME')
             res.set_cookie(se_name, create)
-    return res
+        return res
+    return jsonify({"error": "no user found for this email"}), 404
