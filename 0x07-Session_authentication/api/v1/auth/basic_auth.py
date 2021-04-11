@@ -28,7 +28,8 @@ class BasicAuth(Auth):
                                             self,
                                             base64_authorization_header: str
                                             ) -> str:
-        """Decoded value of a Base64 string"""
+        """Decoded value of a Base64 string
+        """
         if base64_authorization_header is None:
             return None
 
@@ -80,7 +81,8 @@ class BasicAuth(Auth):
         return None
 
     def current_user(self, request=None) -> TypeVar('User'):
-        """Overloads Auth and retrieves the User instance for a request"""
+        """Overloads Auth and retrieves the User instance for a request
+        """
         au_h = self.authorization_header(request)
         extract = self.extract_base64_authorization_header(au_h)
         decode = self.decode_base64_authorization_header(extract)
