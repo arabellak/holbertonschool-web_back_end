@@ -44,3 +44,14 @@ class DB:
         """
         q = self._session.query(User).filter_by(**kw).first()
         return q
+
+    def update_user(self, user_id: int, **kws) -> User:
+        """ Locates the user to update it.
+        """
+        try:
+            user_upd = self.find_user_by(id=user_id)
+            for key, value in kws.items():
+                setattr(user_upd, key, value)
+            self._session.commit()
+        except Exception:
+            raise ValueError
