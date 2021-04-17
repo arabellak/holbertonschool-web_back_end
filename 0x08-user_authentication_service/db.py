@@ -40,8 +40,3 @@ class DB:
                 - First row found in the users table as filtered
                 by the method’s input arguments.
         """
-        try:
-
-        except NoResultFound:
-
-        except InvalidRequestError:
