@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.exc import InvalidRequestError, NoResultFound
-from sqlalchemy.orm.query import first
+
 
 from user import Base
 from user import User
@@ -33,3 +32,4 @@ class DB:
         self._session.add(user)
         self._session.commit()
         return user
+
