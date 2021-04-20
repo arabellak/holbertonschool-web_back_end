@@ -3,9 +3,10 @@
 """
 import unittest
 from nose.tools import assert_equal
+from parameterized import parameterized
 
 
-class TestAccessNestedMap(TestCase):
+class TestAccessNestedMap(unittest.TestCase):
     """Tests access_nested_map function
     """
 
