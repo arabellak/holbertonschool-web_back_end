@@ -4,6 +4,7 @@
 import unittest
 from nose.tools import assert_equal
 from parameterized import parameterized
+from utils import access_nested_map
 
 
 class TestAccessNestedMap(unittest.TestCase):
