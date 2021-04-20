@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+"""Unittests and Integration Tests
 """
 import unittest
 from nose.tools import assert_equal
@@ -14,7 +14,7 @@ class TestAccessNestedMap(unittest.TestCase):
     @parameterized.expand([
         {"a": 1}, path=("a",),
         {"a": {"b": 2}}, path=("a",),
-        {"a": {"b": 2}}, path=("a", "b"),
+        {"a": {"b": 2}}, path=("a", "b")
     ])
     def test_access_nested_map(self, nestedMap, path, expected):
         """Test that the method returns what it is supposed to
