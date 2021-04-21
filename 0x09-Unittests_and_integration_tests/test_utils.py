@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Unittests and Integration Tests
 """
-import unittest
-from unittest import mock
+from unittest import mock, TestCase
 from nose.tools import assert_equal
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
 
 
-class TestAccessNestedMap(unittest.TestCase):
+class TestAccessNestedMap(TestCase):
     """Tests access_nested_map function
     """
 
@@ -34,7 +33,7 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(expected):
             access_nested_map(nestedMap, path)
 
-    class TestGetJson(unittest.TestCase):
+    class TestGetJson(TestCase):
         """
             Tests that returns the expected result
         """
@@ -54,7 +53,7 @@ class TestAccessNestedMap(unittest.TestCase):
                 m.json.assert_called_once()
                 self.assertEqual(mock_request, testPayload)
 
-    class TestMemoize(unittest.TestCase):
+    class TestMemoize(TestCase):
         """
             Tests memoize
         """
