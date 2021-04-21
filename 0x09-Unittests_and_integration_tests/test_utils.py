@@ -13,9 +13,9 @@ class TestAccessNestedMap(unittest.TestCase):
     """
 
     @parameterized.expand([
-        {"a": 1}, path=("a",),
-        {"a": {"b": 2}}, path=("a",),
-        {"a": {"b": 2}}, path=("a", "b")
+        ({"a": 1}, path=("a",)),
+        ({"a": {"b": 2}}, path=("a",)),
+        ({"a": {"b": 2}}, path=("a", "b"))
     ])
     def test_access_nested_map(self, nestedMap, path, expected):
         """
@@ -24,8 +24,8 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nestedMap, path), expected)
 
     @parameterized.expand([
-        {}, path=("a",),
-        {"a": 1}, path=("a", "b")
+        ({}, path=("a",)),
+        ({"a": 1}, path=("a", "b"))
     ])
     def test_access_nested_map_exception(self, nestedMap, path, expected):
         """
@@ -39,8 +39,8 @@ class TestAccessNestedMap(unittest.TestCase):
             Tests that returns the expected result
         """
         @parameterized.expand([
-            "http://example.com", test_payload={"payload": True},
-            "http://holberton.io", test_payload={"payload": False}
+            ("http://example.com", test_payload={"payload": True}),
+            ("http://holberton.io", test_payload={"payload": False})
         ])
         def test_get_json(self, testPayload, testUrl):
             """
