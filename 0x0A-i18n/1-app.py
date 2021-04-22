@@ -7,23 +7,23 @@ from flask_babel import Babel
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.config.from_pyfile('Config')
 babel = Babel(app)
 
 
 class Config():
     """
-        Config
+        Configuration with languages and default location and timezone
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
+app.config.from_pyfile('Config')
 
 @app.route('/')
 def hello_holberton():
     """Return
-        - template 0-index
+        - template 1-index
     """
     return render_template('1-index.html')
 
