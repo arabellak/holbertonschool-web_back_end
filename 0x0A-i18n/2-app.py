@@ -25,15 +25,15 @@ def get_locale():
     """
         Determinates the best match with the supported langs
     """
-    return request.accept_languages.best_match(['en', 'fr'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/')
 def hello_holberton():
     """Return
-        - template 1-index
+        - template 2-index
     """
-    return render_template('1-index.html')
+    return render_template('2-index.html')
 
 
 if __name__ == '__main__':
