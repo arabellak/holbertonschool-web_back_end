@@ -2,10 +2,8 @@
 """
     Babel setup
 """
-from flask import Flask
 from flask_babel import Babel
 from flask import Flask, render_template
-
 app = Flask(__name__)
 babel = Babel(app)
 
@@ -18,7 +16,9 @@ class Config():
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
-app.config.from_pyfile('Config')
+
+app.config.from_object('Config')
+
 
 @app.route('/')
 def hello_holberton():
