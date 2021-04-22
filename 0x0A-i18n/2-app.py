@@ -31,9 +31,9 @@ def get_locale():
 @app.route('/')
 def hello_holberton():
     """Return
-        - template 2-index
+        - template 1-index
     """
-    return render_template('2-index.html')
+    return render_template('1-index.html')
 
 
 if __name__ == '__main__':
