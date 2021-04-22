@@ -25,11 +25,10 @@ def get_locale():
     """
         Determinates the best match with the supported langs
     """
-    locale = request.args.get('locale=fr')
-    if locale:
-        return locale
-
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    locale = request.args.get('locale')
+    if not locale:
+        return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return locale
 
 
 @app.route('/')
