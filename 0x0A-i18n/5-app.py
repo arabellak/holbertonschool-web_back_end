@@ -39,6 +39,7 @@ def get_locale():
         return locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+
 def get_user(login_as) -> Dict:
     """
         Return
@@ -47,6 +48,7 @@ def get_user(login_as) -> Dict:
     if login_as in users:
         return users.get(login_as)
     return None
+
 
 @app.before_request
 def before_request():
