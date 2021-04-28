@@ -27,10 +27,11 @@ class Cache():
 
     def get(self,
             key: str,
-            fn: Optional[Callable]) -> Union[int, bytes, float, str]:
+            fn: Optional[Callable] = None) -> Union[int, bytes, float, str]:
         """
             Get
             Takes a key and callable argument
         """
-        k = self._redis.get(key)
-        return fn(k) if fn else k
+        if key:
+            k = self._redis.get(key)
+            return fn(k) if fn else k
