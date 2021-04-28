@@ -21,6 +21,7 @@ def count_calls(method: Callable) -> Callable:
         return method(self, *args, **kwds)
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """
         Store the history of inputs and outputs for a particular function.
@@ -40,6 +41,7 @@ def call_history(method: Callable) -> Callable:
         return r
     return wrapper
 
+
 def replay(method: Callable):
     """
         Display the history of calls of a function
@@ -55,6 +57,7 @@ def replay(method: Callable):
     for i, o in tuple(zip(inputs, outputs)):
         print("{}(*('{}',)) -> {}".format(metNam, i.decode("utf-8"),
               o.decode("utf-8")))
+
 
 class Cache():
     """
