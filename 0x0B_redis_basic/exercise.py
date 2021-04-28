@@ -32,6 +32,5 @@ class Cache():
             Get
             Takes a key and callable argument
         """
-        if key:
-            k = self._redis.get(key)
-            return fn(k) if fn else k
+        k = self._redis.get(key)
+        return fn(k) if fn else k
