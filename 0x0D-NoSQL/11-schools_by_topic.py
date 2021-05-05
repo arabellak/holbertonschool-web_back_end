@@ -9,5 +9,5 @@ def schools_by_topic(mongo_collection, topic):
     """
         List of school having a specific topic:
     """
-    specTop = mongo_collection.find({'topic': topic})
+    specTop = mongo_collection.find({'topics': topic})
     return specTop
