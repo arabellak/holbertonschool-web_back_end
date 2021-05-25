@@ -1,7 +1,7 @@
-const countStudents = require('./3-read_file_async');
 const http = require('http');
 
 const args = process.argv.slice(2);
+const countStudents = require('./3-read_file_async');
 
 const DATABASE = args[0];
 
@@ -30,6 +30,6 @@ const app = http.createServer(async (req, res) => {
 });
 
 app.listen(port, hostname, () => {
+    console.log(`App listening at http://localhost:${port}`);
 });
-
 module.exports = app;
