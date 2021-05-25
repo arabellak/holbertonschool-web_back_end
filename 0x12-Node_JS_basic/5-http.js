@@ -30,6 +30,6 @@ const app = http.createServer(async (req, res) => {
 });
 
 app.listen(port, hostname, () => {
-    console.log(`App listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });
 module.exports = app;
