@@ -4,7 +4,7 @@ const Utils = require('./utils');
 const expect = chai.expect;
 const getPaymentTokenFromAPI = require('./6-payment_token');
 
-describe('getPaymentTokenFromAPI', function() {
+describe('Tests getPaymentTokenFromAPI function', function() {
   it('getting resolved promise', function(done) {
     const promise = getPaymentTokenFromAPI(true);
     done();

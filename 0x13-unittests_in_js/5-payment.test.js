@@ -6,7 +6,7 @@ const sendPaymentRequestToApi = require('./5-payment.js');
 const Utils = require('./utils');
 
 
-describe('5-paymentTest', function() {
+describe('Tests sendPaymentRequestToAPI function', function() {
   let consoleSpy;
   beforeEach(() => {
   consoleSpy = sinon.spy(console, 'log');
