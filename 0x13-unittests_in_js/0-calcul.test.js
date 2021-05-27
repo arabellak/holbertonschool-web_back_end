@@ -17,6 +17,5 @@ describe('Tests calculateNumber function', () => {
     });
     it('No arguments', () => {
         assert(isNaN(calculateNumber()));
-        assert(isNaN(calculateNumber(8)));
     })
 });
