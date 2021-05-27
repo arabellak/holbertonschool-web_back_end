@@ -7,10 +7,10 @@ describe('Tests calculateNumber function', () => {
         expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
     });
     it('Subtract', () => {
-            expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
+        expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
     });
     it('Divide', () => {
-            expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
-            expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
+        expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
+        expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
     });
 });
