@@ -4,6 +4,7 @@ const calculateNumber = require('./1-calcul.js');
 describe('Tests calculateNumber function', () => {
     it("Calculates the sum", () => {
         it('Sum', () => {
+            assert.strictEqual(calculateNumber('SUM', 11, 11), 22);
             assert.strictEqual(calculateNumber('SUM', 1.4, 4.5), 6);
         });
     })
