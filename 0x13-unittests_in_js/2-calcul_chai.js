@@ -1,11 +1,11 @@
 function calculateNumber(type, a, b){
-  if (type === 'SUM') Math.round(a) + Math.round(b);
-  if (type === 'SUBTRACT') Math.round(a) - Math.round(b);
+  if (type === 'SUM') return Math.round(a) + Math.round(b);
+  if (type === 'SUBTRACT') return Math.round(a) - Math.round(b);
   if (type === 'DIVIDE') {
     if (Math.round(b) === 0) {
-      return 'Eror'
+      return 'Error'
     }
-    Math.round(a) / Math.round(b);
+    return Math.round(a) / Math.round(b);
   }
 }
 
