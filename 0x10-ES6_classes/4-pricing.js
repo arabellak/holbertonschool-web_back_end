@@ -1,21 +1,14 @@
-import Currency from './3-currency.js';
+import Currency from './3-currency';
 
-export default  class Pricing{
+export default class Pricing {
   constructor(amount, currency) {
-    if (typeof (amount) === 'string') {
-      this._amount = amount;
-    }
-  
-    if (typeof(currency) === 'string') {
-      this._currency = currency;
-    }
+    this._amount = amount;
+    this._currency = currency;
   }
 
   set amount(value) {
-    if (typeof (amount) === 'string') {
-      this._amount = amount;
-    } else {
-      throw new Error(TypeError('amount must be a String'));
+    if (typeof (value) === 'number') {
+      this._amount = value;
     }
   }
 
@@ -24,10 +17,8 @@ export default  class Pricing{
   }
 
   set currency(value) {
-    if (typeof (currency) === 'string') {
-      this._currency = currency;
-    } else {
-      throw new Error(TypeError('currency must be a String'));
+    if (value instanceof Currency) {
+      this._currency = value;
     }
   }
 
@@ -35,8 +26,8 @@ export default  class Pricing{
     return this._currency;
   }
 
-  displayFullCurrency() {
-    return `${this.name} (${this.code})`;
+  displayFullPrice() {
+    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {

@@ -1,48 +1,40 @@
-export class HolbertonCourse {
+export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name,
-    this._length = length,
-    this._students = students
+    // name
+    if (typeof (name) === 'string') this._name = name;
+    else throw new Error(TypeError('name must be a String'));
+    // length
+    if (typeof (length) === 'number') this._length = length;
+    else throw new Error(TypeError('length must be a Number'));
+    // students
+    if (Array.isArray(students) && students.every((val) => typeof (val) === 'string')) this._students = students;
+    else throw new Error(TypeError('students must be an Array of Strings'));
+  }
 
-    if (typeof name !== 'string') {
-      throw Error(TypeError('Name must be a string'))
-    }
-    if (typeof length !== 'number') {
-      throw Error(TypeError('Length must be a number'))
-    }
-    if (!(Array.isArray(students))) {
-      throw Error(TypeError('Students must be a string'))
-    }
+  set name(value) {
+    if (typeof (value) === 'string') this._name = value;
+    else throw new Error(TypeError('name must be a String'));
   }
 
   get name() {
     return this._name;
   }
 
-  set name() {
-    if (typeof name !== 'string') {
-      throw Error(TypeError('Name must be a string'))
-    }
+  set length(value) {
+    if (typeof (value) === 'number') this._length = value;
+    else throw new Error(TypeError('length must be a Number'));
   }
 
   get length() {
     return this._length;
   }
-  
-  set length() {
-    if (typeof length !== 'number') {
-      throw Error(TypeError('Length must be a number'))
-    }
+
+  set students(value) {
+    if (Array.isArray(value) && value.every((v) => typeof (v) === 'string')) this._students = value;
+    else throw new Error(TypeError('students must be an Array of Strings'));
   }
 
   get students() {
     return this._students;
   }
-
-  set students() {
-    if (!(Array.isArray(students))) {
-      throw Error(TypeError('Students must be a string'))
-    }
-  }
-
 }
