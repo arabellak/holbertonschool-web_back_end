@@ -4,8 +4,7 @@ const calculateNumber = require('./0-calcul.js');
 describe('Tests calculateNumber function', () => {
     it('Calculates positive numbers', function() {
         assert.equal(calculateNumber(1, 3), 4)
-        assert.equal(calculateNumber(1, 3.7), 5)
-        assert.equal(calculateNumber(3.7, 3.7), 8)
+        assert.equal(calculateNumber(1, 4), 5)
     });
     it('Calculates negative numbers', () => {
         assert.equal(calculateNumber(-1, 1), 0)
@@ -17,6 +16,6 @@ describe('Tests calculateNumber function', () => {
         assert.equal(calculateNumber(-2.8, 9.8), 7)
     });
     it('No arguments', () => {
-        assert(isNaN(calculateNumber()));
+        assert(isNaN(calculateNumber()), true);
     })
 });
