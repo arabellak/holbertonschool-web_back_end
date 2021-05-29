@@ -5,6 +5,7 @@ describe('Tests calculateNumber function', () => {
     it('Calculates positive numbers', function() {
         assert.equal(calculateNumber(1, 3), 4)
         assert.equal(calculateNumber(1, 3.7), 5)
+        assert.equal(calculateNumber(3.7, 3.7), 8)
     });
     it('Calculates negative numbers', () => {
         assert.equal(calculateNumber(-1, 1), 0)
