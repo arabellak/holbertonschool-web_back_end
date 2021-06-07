@@ -1,4 +1,5 @@
-const redis = require('redis');
+import redis from 'redis';
+
 const client = redis.createClient();
 const { promisify } = require('util');
 
